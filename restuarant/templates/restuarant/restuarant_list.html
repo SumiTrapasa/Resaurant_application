@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h3>Restuarant details</h3>
+<ul>
+{% for x in obj %}
+    <li><h3><a href="restuarant/{{x.id}}">{{x.name}}</a></h3></li> 
+    <ul> 
+        <li>{{x.discriptions}}</li>
+    </ul>
+{% endfor %}
+</ul>
+</table> 
+{% endblock content %}
