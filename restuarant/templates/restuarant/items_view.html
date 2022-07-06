@@ -1,9 +1,11 @@
 {% extends 'index.html' %}
 {% block content %}
-<h2>{{title}}</h2>
-<ul>
-{% for x in obj %}
-    <li><a href="items/{{x.id}}">{{x}}</a></li>
-{% endfor %}
-</ul>
+<h2>{{obj1}}</h2>
+<p>{{obj1.description}}</p>
+<p>
+<b>Cuisines type: </b>{{obj1.cuisines_type}}<br>
+<b>Price: </b>{{obj1.price}}<br>
+<b>Type: </b>{{obj1.type}}<br>
+<b>Restuarant: </b>{{obj1.rname}}
+</p>
 {% endblock content %}

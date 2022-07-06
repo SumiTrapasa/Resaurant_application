@@ -7,8 +7,9 @@
     <li><h3><a href="restuarant/{{x.id}}">{{x.name}}</a></h3></li> 
     <ul> 
         <li>{{x.discriptions}}</li>
+        <li><a href="{{x.id}}/">Edit</a>   <a href="{{x.id}}/delete">Delete</a></li>
     </ul>
 {% endfor %}
-</ul>
-</table> 
+</ul><br>
+<p><a href="add/">Add Restuarant</a></p>
 {% endblock content %}
