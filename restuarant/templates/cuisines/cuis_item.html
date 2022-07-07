@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% block content %}
+<h3>{{cuisine}}</h3>
+<ul>
+{% for item in items  %}
+    <li>{{item}}</li>
+{% endfor %}
+</ul>
+<a href='delete/'>Delete this cuisine</a>
+{% endblock content %}

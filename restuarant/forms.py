@@ -10,7 +10,7 @@ class ResForm(forms.ModelForm):
             'discriptions',
             'location',
             'cuisines',
-            'type',
+            'veg_type',
             'rating',
             'contact',
             'email'
@@ -31,6 +31,6 @@ class MenuForm(forms.ModelForm):
             'description',
             'cuisines_type',
             'price',
-            'type',
+            'veg_type',
             'rname'
         ]

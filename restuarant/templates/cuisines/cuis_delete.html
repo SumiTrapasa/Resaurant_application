@@ -1,0 +1,8 @@
+{% extends 'index.html' %}
+{% block content %}
+<form method="POST"> {% csrf_token %}
+    <h3>{{restuarant.name}} : {{cuisine.cuisines_type}}</h3>
+    <h3>do you want to delete the "{{cuisine.cuisines_type}}" details ?</h3>
+    <p><input type='submit' value='yes' />
+</form>
+{% endblock content %}

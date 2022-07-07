@@ -1,8 +1,8 @@
 {% extends 'index.html' %}
 {% block content %}
-<h3>Restuarant Form</h3>
+<h3>Menu Form</h3>
 <form method="POST"> {% csrf_token %}
     {{form.as_p}}
-    <input type='submit' value='save' /> <a href='../'>cancle</a></p>
+    <input type='submit' value='save' /></p>
 </form>
 {% endblock content %}

@@ -3,13 +3,22 @@
 {% block content %}
 <h3>Restuarant details</h3>
 <ul>
-{% for x in obj %}
-    <li><h3><a href="restuarant/{{x.id}}">{{x.name}}</a></h3></li> 
+{% for res in restuarant %}
+    <li><h3><a href="restuarant/{{res.id}}">{{res.name}}</a></h3></li> 
     <ul> 
-        <li>{{x.discriptions}}</li>
-        <li><a href="{{x.id}}/">Edit</a>   <a href="{{x.id}}/delete">Delete</a></li>
+        <li>{{res.discriptions}}</li>
+        <li>{{res.veg_type}}</li>
+        <li><a href="{{res.id}}/">Edit</a>   <a href="{{res.id}}/delete">Delete</a></li>
     </ul>
 {% endfor %}
 </ul><br>
-<p><a href="add/">Add Restuarant</a></p>
+<p><a href="add/">Add Restuarant</a></p><br>
+
+<h3>All Cuisines details</h3>
+<ul>
+    {% for cuisine in cuisines %}
+    <li>{{cuisine}}</li>
+    {% endfor %}
+</ul>
+<p><a href="add/cuisines">Add Cuisines</a></p>
 {% endblock content %}

@@ -1,16 +1,17 @@
 {% extends 'index.html' %}
 {% block content %}
-<h2>{{obj2}}</h2>
-<p>{{obj2.discriptions}}</p>
+<h2>{{restuarant}}</h2>
+<p>{{restuarant.discriptions}}</p>
 <p>
     <b>Cuisines: </b>
-    {% for x in obj %}
-    {{x}}
+    {% for cuisines in cuisines %}
+    <a href='{{cuisines.id}}/cuisines/'>{{cuisines}}</a>, 
     {% endfor %}<br>
-    <b>Rating: </b>{{obj2.rating}}<br>
-    <b>Location: </b>{{obj2.location}}<br>
-    <b>Contact: </b>{{obj2.contact}}<br>
-    <b>Email: </b>{{obj2.email}}<br>
+    <b>Type: </b>{{restuarant.veg_type}}<br>
+    <b>Rating: </b>{{restuarant.rating}}<br>
+    <b>Location: </b>{{restuarant.location}}<br>
+    <b>Contact: </b>{{restuarant.contact}}<br>
+    <b>Email: </b>{{restuarant.email}}<br>
 </p>
 
 <h3>Menu Items: </h3>
@@ -20,14 +21,21 @@
     <th>Price</th>
     <th>Cuisines type</th>
     <th>Type</th>
+    <th>Edit</th>
+    <th>Delete</th>
 </tr>
-{% for x in obj3 %}
+{% for menu in menu %}
 <tr>
-    <td><a href="items/{{x.id}}">{{x}}</a></td>
-    <td>{{x.price}} Rs.</td>
-    <td>{{x.cuisines_type}}</td>
-    <td>{{x.type}}</td>
+    <td><a href="../items/{{menu.id}}">{{menu}}</a></td>
+    <td>{{menu.price}} Rs.</td>
+    <td>{{menu.cuisines_type}}</td>
+    <td>{{menu.veg_type}}</td>
+    <td><a href="{{menu.id}}/update/">Edit</a></td>
+    <td><a href="{{menu.id}}/delete">Delete</a></td>
 </tr>
     {% endfor %}
+<tr align="center">
+    <td colspan=6><a href="create/">Add New Item</a></td>
+</tr>
 </table>
 {% endblock content %}
