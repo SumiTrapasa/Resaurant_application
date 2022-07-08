@@ -8,6 +8,12 @@
     <ul> 
         <li>{{res.discriptions}}</li>
         <li>{{res.veg_type}}</li>
+        <li> Cuisines : 
+            {% for cuis in res.cuisines.all %}
+            {{cuis}}
+            {% endfor %}
+        </li>
+        <li>{{res.location}}</li>
         <li><a href="{{res.id}}/">Edit</a>   <a href="{{res.id}}/delete">Delete</a></li>
     </ul>
 {% endfor %}
@@ -17,7 +23,7 @@
 <h3>All Cuisines details</h3>
 <ul>
     {% for cuisine in cuisines %}
-    <li>{{cuisine}}</li>
+    <li>{{cuisine}} <a href="edit/{{cuisine.id}}/"><i class='fa fa-edit'></i></a></li>
     {% endfor %}
 </ul>
 <p><a href="add/cuisines">Add Cuisines</a></p>

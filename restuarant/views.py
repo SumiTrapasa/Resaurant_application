@@ -141,4 +141,15 @@ def cuis_create(request):
         'form' : form
     }
     return render(request, "cuisines/cuis_create.html", context)
-    
+
+def cuis_update(request, id=id):
+    obj = get_object_or_404(Cuisines, id=id)
+    form =  CuisForm(request.POST or None, instance=obj)
+    if form.is_valid():
+        form.save()
+        return redirect('../../')
+    context = {
+        'form' : form
+    }
+    return render(request, "cuisines/cuis_create.html", context)
+

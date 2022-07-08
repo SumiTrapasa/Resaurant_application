@@ -26,7 +26,8 @@ from restuarant.views import ( restuarant_details_view,
  item_create,
  cuis_view,
  cuis_create,
- cuis_delete
+ cuis_delete,
+ cuis_update
 )
 
 urlpatterns = [
@@ -35,6 +36,7 @@ urlpatterns = [
     path('<int:id>/delete/',res_delete, name='res_delete'),
     path('add/',res_create, name='res_create'),
     path('add/cuisines',cuis_create, name='cuis_create'),
+    path('edit/<int:id>/',cuis_update, name='cuis_update'),
     path('',restuarant_details_view, name= 'list'),
     path('restuarant/<int:id>/',restuarant_view , name='view'),
     path('restuarant/items/<int:id>/',items_view , name='item'),
